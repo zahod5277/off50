@@ -1,8 +1,8 @@
-{var $rub = $_modx->runSnippet('!CRcalc',[
+{var $rub = $_modx->runSnippet('@FILE:snippets/CRCalc.php',[
     'multiplier' => 'USD',
     'input' => ($price)
 ])}
-{var $eur = $_modx->runSnippet('!CRcalc',[
+{var $eur = $_modx->runSnippet('@FILE:snippets/CRCalc.php',[
     'divider' => 'EUR',
     'input' => ($rub)
 ])}
@@ -16,19 +16,30 @@
             ])}
             <!-- info -->
             <div class="product-info">
-                <h2 class="product-info__title">Швейцарские часы</h2>
+                {var $category = $_modx->runSnippet('!pdoField',[
+                    'field' => 'id',
+                    'top' => 1,
+                ])}
+                {var $categoryTitle = $_modx->runSnippet('@FILE:snippets/localizatorField.php',[
+                    'field' => 'pagetitle',
+                    'resource_id' => $category,
+                    'key' => ('cultureKey'|option)
+                ])}
+                <h2 class="product-info__title">{$categoryTitle}</h2>
                 <ul>{($price|number:'':'':'')}
-                    <li>Краткое описание товара, состояние</li>
-                    <li>Эксклюзивные детали</li>
-                    <li>Комплектация</li>
+                    <li>{$_modx->resource.introtext}</li>
+                    {$_modx->runSnippet('!msOptions',[
+                        'options' => 'sex,body_material,body_diameter',
+                        'tpl' => '@FILE:chunks/shop/product/shortOptions.tpl'
+                    ])}
                 </ul>
                 <a href="#characteristics" class="more scroll">Подробнее</a>
                 <!-- price -->
                 <div class="product-price">
                     <div class="product-price__value">$ {$price|number:0:'.':' '}</div>
                     <div class="product-price__currency">
-                        <span><span class="rub">г</span> {$rub}</span>
-                        <span>€ {$eur|number:3:' ':' '}</span>
+                        <span><span class="rub">г</span> {$rub|number:0:' ':' '}</span>
+                        <span>€ {$eur|number:0:' ':' '}</span>
                     </div>
                 </div>
                 <div class="product-info-footer">
@@ -53,46 +64,32 @@
             <div class="tab-content">
                 <div id="tab-1" class="tab-pane tab-pane_active">
                     <ul class="characteristics-list">
-                        <li>Тип: <span class="value">мужские</span>
-                        </li>
-                        <li>Корпус: <span class="value"> розовое золото</span>
-                        </li>
-                        <li>Размер корпуса: <span class="value"> диаметр 38 мм</span>
-                        </li>
-                        <li>Стекло: <span class="value">сапфировое</span>
-                        </li>
-                        <li>Водонепроницаемость: <span class="value">30 м</span>
-                        </li>
-                        <li>Циферблат: <span class="value">белый, накладные метки и стрелки из 18-каратного золота, малый секундный счетчик в положении "6 часов"</span>
-                        </li>
-                    </ul>
-                    <ul class="characteristics-list">
-                        <li>Безель: <span class="value">гладкий, полированное розовое золото</span>
-                        </li>
-                        <li>Крепление: <span class="value">ремешок из крокодиловой кожи, коричневый, с коричневой прострочкой и вставкой из розового 18к</span>
-                        </li>
-                        <li>Механизм: <span class="value">механические с ручным заводом</span>
-                        </li>
-                        <li>Калибр: <span class="value">215 PS</span>
-                        </li>
-                        <li>Запас хода: <span class="value">44 часа</span>
-                        </li>
-                        <li>Задняя крышка: <span class="value">прозрачная, из сапфирового стекла</span>
-                        </li>
+                        {$_modx->runSnippet('!msOptions',[
+                            'options' => 'made_in,body_diameter,sex,body_material,clockwork,strap_color,forma,stat,dial_color,strap_type,complication',
+                            'tpl' => '@FILE:chunks/shop/product/options.row.tpl'
+                        ])}
                     </ul>
                 </div>
                 <div id="tab-2" class="tab-pane">
-                    {if 'cultureKey'|option=='ru'}
-                    [[#9.content]]
-                    {else}
-                        [[#9.localizator_content]]
-                    {/if}
+                    {$_modx->runSnippet('@FILE:snippets/localizatorField.php',[
+                        'field' => 'content',
+                        'resource_id' => 9,
+                        'key' => ('cultureKey'|option)
+                    ])}
                 </div>
                 <div id="tab-3" class="tab-pane">
-                    [[#8.content]]
+                    {$_modx->runSnippet('@FILE:snippets/localizatorField.php',[
+                        'field' => 'content',
+                        'resource_id' => 8,
+                        'key' => ('cultureKey'|option)
+                    ])}
                 </div>
                 <div id="tab-4" class="tab-pane">
-                    [[#28.content]]
+                    {$_modx->runSnippet('@FILE:snippets/localizatorField.php',[
+                        'field' => 'content',
+                        'resource_id' => 28,
+                        'key' => ('cultureKey'|option)
+                    ])}
                 </div>
             </div>
         </div>

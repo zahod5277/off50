@@ -1,0 +1,1 @@
+<option value="{$vendor_name}">{$vendor_name}</option>

@@ -7,14 +7,14 @@
             <a href="#" data-popup="open" data-popup-id="#popup" class="more">{'lw.call-me'|lexicon}</a>
             <!-- value -->
             <div class="info-value">
-                <span class="info-value__dollars">$ {$_modx->getPlaceholder('+USD')|number: 2 : '.' : ' '}</span>
-                <span class="info-value__euro">€ {$_modx->getPlaceholder('+EUR')|number: 2 : '.' : ' '}</span>
+                <span class="info-value__dollars">$ {$_modx->getPlaceholder('+USD')|number: 2 : '.' : ' '+(0.4)}</span>
+                <span class="info-value__euro">€ {$_modx->getPlaceholder('+EUR')|number: 2 : '.' : ' '+(0.4)}</span>
             </div>
         </div>
         <!-- address -->
         <div class="footer-address">
             <span><i class="icon icon-clock-secondary"></i> 9.00 - 21.00</span>
-            <span>{'lw.header-adress'|lexicon}</span>
+            {*<span>{'lw.header-adress'|lexicon}</span>*}
         </div>
         <!-- center -->
         <div class="footer-center">

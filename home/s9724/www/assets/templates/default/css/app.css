@@ -3304,7 +3304,7 @@ body.home .header-bottom .container{
 .logo img{
     display: inline-block;
     float: left;
-    width: 70%;
+    width: 90%;
 }
 
 .logo-text{
@@ -3323,7 +3323,7 @@ body.home .header-bottom .container{
 }
 
 .logo-text__desc{
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   display: inline-block;
   margin-top: 4px;
   line-height: 1.5;

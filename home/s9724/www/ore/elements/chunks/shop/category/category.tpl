@@ -9,7 +9,7 @@
     'sortdir' => 'DESC',
     'tpl' => '@FILE:chunks/shop/category/product.filter.row.tpl',
     'includeThumbs' => 'list',
-    'filters' => 'ms|price:number,ms|vendor:vendors,ms|made_in',
+    'filters' => 'ms|price:number,ms|vendor:vendors,ms|made_in,ms|sex,ms|stat,ms|forma,ms|complication,ms|body_material,ms|strap_type,ms|dial_color,ms|body_diameter,ms|clockwork,ms|strap_color',
     'aliases' => 'ms|price:number==price,ms|vendor==vendor,ms|made_in==country',
     'tplOuter' => '@FILE:chunks/shop/filter/tpl.mFilter2.outer.tpl',
     'tplFilter.outer.default' => '@FILE:chunks/shop/filter/tplFilter.outer.default.tpl',
