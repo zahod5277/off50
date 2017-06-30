@@ -3304,7 +3304,7 @@ body.home .header-bottom .container{
 .logo img{
     display: inline-block;
     float: left;
-    width: 90%;
+    width: 100%;
 }
 
 .logo-text{
@@ -6281,7 +6281,7 @@ body.home .header-bottom .container{
   }
 
   .logo img{
-    width: 24%;
+    width: 60%;
   }
 
   .logo-text{
@@ -6750,7 +6750,8 @@ body.home .header-bottom .container{
   }
 
   .logo-text{
-    padding-left: 20px;
+/*    padding-left: 20px;*/
+    padding-left: 0px;
   }
 
   .header-info{
