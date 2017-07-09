@@ -10,7 +10,7 @@
                         <img src="{$product.card}" alt="{$pagetitle}">
                     </a>
                     <a href="{$product.id|url}" class="card__title">{$product.pagetitle}</a>
-                    <p class="card__text">{$product.introtext}</p>
+                    <p class="card__text">{$product.introtext|truncate:70:'...'}</p>
                     <!-- price -->
                     <div class="card-footer">
                         <div class="card-price">

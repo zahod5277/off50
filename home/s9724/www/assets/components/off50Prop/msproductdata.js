@@ -1,12 +1,19 @@
-var storeitems = new Ext.data.ArrayStore({
+//extend grid
+var sexitems = new Ext.data.ArrayStore({
     id: 'minishop2-product-sex'
     ,fields: ['value',{name: 'name', type: 'string'}]
     ,data: [['Мужской','Мужской'],['Женский','Женский'],['Унисекс','Унисекс']]
 });
+var statusitems = new Ext.data.ArrayStore({
+    id: 'minishop2-product-stat'
+    ,fields: ['value',{name: 'name', type: 'string'}]
+    ,data: [['Новые','Новые'],['Б.У.','Б.У.']]
+});
+
 miniShop2.combo.ProductSex = function(config) {
     config = config || {};
     Ext.applyIf(config,{
-        store: storeitems
+        store: sexitems
         ,displayField: 'name'
         ,valueField: 'value'
         ,hiddenName: 'sex' //не забудьте поменять
@@ -22,6 +29,26 @@ miniShop2.combo.ProductSex = function(config) {
 };
 Ext.extend(miniShop2.combo.ProductSex,MODx.combo.ComboBox);
 Ext.reg('minishop2-combo-product-sex',miniShop2.combo.ProductSex);
+
+miniShop2.combo.ProductStat = function(config) {
+    config = config || {};
+    Ext.applyIf(config,{
+        store: statusitems
+        ,displayField: 'name'
+        ,valueField: 'value'
+        ,hiddenName: 'stat' //не забудьте поменять
+        ,mode: 'local'
+        ,triggerAction: 'all'
+        ,editable: false
+        ,selectOnFocus: false
+        ,preventRender: true
+        ,forceSelection: true
+        ,enableKeyEvents: true
+    });
+    miniShop2.combo.ProductStat.superclass.constructor.call(this,config);
+};
+Ext.extend(miniShop2.combo.ProductStat,MODx.combo.ComboBox);
+Ext.reg('minishop2-combo-product-stat',miniShop2.combo.ProductStat);
 //plugin
 miniShop2.plugin.off50Prop = {
     getFields: function () {
@@ -59,7 +86,7 @@ miniShop2.plugin.off50Prop = {
                 description: '<b>[[+dial_color]]</b><br />' + _('ms2_product_dial_color_help')
             },
             stat: {
-                xtype: 'minishop2-combo-autocomplete',
+                xtype: 'minishop2-combo-product-stat',
                 description: '<b>[[+stat]]</b><br />' + _('ms2_product_stat_help')
             },
             forma: {

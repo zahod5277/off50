@@ -29,7 +29,7 @@
                 <ul>{($price|number:'':'':'')}
                     <li>{$_modx->resource.introtext}</li>
                     {$_modx->runSnippet('!msOptions',[
-                        'options' => 'sex,body_material,body_diameter',
+                        'options' => 'stat,complect,complication',
                         'tpl' => '@FILE:chunks/shop/product/shortOptions.tpl'
                     ])}
                 </ul>
@@ -65,7 +65,7 @@
                 <div id="tab-1" class="tab-pane tab-pane_active">
                     <ul class="characteristics-list">
                         {$_modx->runSnippet('!msOptions',[
-                            'options' => 'made_in,body_diameter,sex,body_material,clockwork,strap_color,forma,stat,dial_color,strap_type,complication',
+                            'options' => 'article,made_in,body_diameter,sex,body_material,clockwork,strap_color,forma,dial_color,strap_type',
                             'tpl' => '@FILE:chunks/shop/product/options.row.tpl'
                         ])}
                     </ul>
