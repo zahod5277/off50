@@ -51,18 +51,18 @@
     <div class="header-bottom">
         <div class="container">
             <!-- logo -->
-            <a href="./" class="logo">
+             <a href="./" class="logo">
                 <img src="assets/templates/default/images/off50.jpg" alt="logo">
                 <span class="logo-text">
-                    {*<span class="logo-text__title">Логотип</span>*}
-                    <span class="logo-text__desc">{'lw.description'|lexicon}</span>
+                    <span class="logo-text__title">Безопасный Luxe</span>
+                    {*<span class="logo-text__desc">{'lw.description'|lexicon}</span>*}
                 </span>
             </a>
             <!-- info -->
             <div class="header-info">
                 <!-- contacts -->
                 <div class="header-info-contacts">
-                    {*<a href="tel:89558965636" class="link-phone"><i class="icon icon-call-answer"></i> 8 (955) 896-56-36</a>*}
+                    <a href="tel:{$_modx->config.sitePhone}" class="link-phone"><i class="icon icon-call-answer"></i> {$_modx->config.sitePhone}</a>
                     <a href="#" class="more" data-popup="open" data-popup-id="#popup">{'lw.call-me'|lexicon}</a>
                     <!-- value -->
                     <div class="info-value">
@@ -72,7 +72,7 @@
                 </div>
                 <!-- address -->
                 <div class="header-info-address">
-                    <span><i class="icon icon-clock"></i> 9.00 - 21.00</span>
+                    {*<span><i class="icon icon-clock"></i> 9.00 - 21.00</span>*}
                     {*<span>{'lw.header-adress'|lexicon}</span>*}
                 </div>
             </div>

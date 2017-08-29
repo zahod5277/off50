@@ -2,12 +2,12 @@
 var sexitems = new Ext.data.ArrayStore({
     id: 'minishop2-product-sex'
     ,fields: ['value',{name: 'name', type: 'string'}]
-    ,data: [['Мужской','Мужской'],['Женский','Женский'],['Унисекс','Унисекс']]
+    ,data: [['мужской','мужской'],['женский','женский'],['унисекс','унисекс']]
 });
 var statusitems = new Ext.data.ArrayStore({
     id: 'minishop2-product-stat'
     ,fields: ['value',{name: 'name', type: 'string'}]
-    ,data: [['Новые','Новые'],['Б.У.','Б.У.']]
+    ,data: [['новые','новые'],['б/у','б/у']]
 });
 
 miniShop2.combo.ProductSex = function(config) {
@@ -54,19 +54,19 @@ miniShop2.plugin.off50Prop = {
     getFields: function () {
         return {
             body_diameter: {
-                xtype: 'minishop2-combo-autocomplete',
+                xtype: 'textfield',
                 description: '<b>[[+body_diameter]]</b><br />' + _('ms2_product_body_diameter_help')
             },
             complect: {
-                xtype: 'minishop2-combo-autocomplete',
+                xtype: 'textfield',
                 description: '<b>[[+complect]]</b><br />' + _('ms2_product_complect_help')
             },
             body_material: {
-                xtype: 'minishop2-combo-autocomplete',
+                xtype: 'textfield',
                 description: '<b>[[+body_material]]</b><br />' + _('ms2_product_body_material_help')
             },
             clockwork: {
-                xtype: 'minishop2-combo-autocomplete',
+                xtype: 'textfield',
                 description: '<b>[[+clockwork]]</b><br />' + _('ms2_product_clockwork_help')
             },
             sex: {
@@ -74,15 +74,15 @@ miniShop2.plugin.off50Prop = {
                 description: '<b>[[+sex]]</b><br />' + _('ms2_product_sex_help')
             },
             strap_type: {
-                xtype: 'minishop2-combo-autocomplete',
+                xtype: 'textfield',
                 description: '<b>[[+strap_type]]</b><br />' + _('ms2_product_strap_type_help')
             },
             strap_color: {
-                xtype: 'minishop2-combo-autocomplete',
+                xtype: 'textfield',
                 description: '<b>[[+strap_color]]</b><br />' + _('ms2_product_strap_color_help')
             },
             dial_color: {
-                xtype: 'minishop2-combo-autocomplete',
+                xtype: 'textfield',
                 description: '<b>[[+dial_color]]</b><br />' + _('ms2_product_dial_color_help')
             },
             stat: {
@@ -90,7 +90,7 @@ miniShop2.plugin.off50Prop = {
                 description: '<b>[[+stat]]</b><br />' + _('ms2_product_stat_help')
             },
             forma: {
-                xtype: 'minishop2-combo-autocomplete',
+                xtype: 'textfield',
                 description: '<b>[[+forma]]</b><br />' + _('ms2_product_forma_help')
             },
             complication: {
@@ -102,28 +102,48 @@ miniShop2.plugin.off50Prop = {
                 description: '<b>[[+functions]]</b><br />' + _('ms2_product_functions_help')
             },
             water_resist: {
-                xtype: 'minishop2-combo-autocomplete',
+                xtype: 'textfield',
                 description: '<b>[[+water_resist]]</b><br />' + _('ms2_product_water_resist_help')
             },
             glass: {
-                xtype: 'minishop2-combo-autocomplete',
+                xtype: 'textfield',
                 description: '<b>[[+glass]]</b><br />' + _('ms2_product_glass_help')
             },
             calibr: {
-                xtype: 'minishop2-combo-autocomplete',
+                xtype: 'textfield',
                 description: '<b>[[+calibr]]</b><br />' + _('ms2_product_calibr_help')
             },
             power_reserve: {
-                xtype: 'minishop2-combo-autocomplete',
+                xtype: 'textfield',
                 description: '<b>[[+power_reserve]]</b><br />' + _('ms2_product_power_reserve_help')
             },
             limited: {
-                xtype: 'minishop2-combo-autocomplete',
+                xtype: 'textfield',
                 description: '<b>[[+limited]]</b><br />' + _('ms2_product_limited_help')
             },
             year: {
-                xtype: 'minishop2-combo-autocomplete',
+                xtype: 'textfield',
                 description: '<b>[[+year]]</b><br />' + _('ms2_product_year_help')
+            },
+            bezel: {
+                xtype: 'textfield',
+                description: '<b>[[+bezel]]</b><br />' + _('ms2_product_bezel_help')
+            },
+            body_comment: {
+                xtype: 'textfield',
+                description: '<b>[[+body_comment]]</b><br />' + _('ms2_product_body_comment_help')
+            },
+            strap_comment: {
+                xtype: 'textfield',
+                description: '<b>[[+strap_comment]]</b><br />' + _('ms2_product_strap_comment_help')
+            },
+            backcap: {
+                xtype: 'textfield',
+                description: '<b>[[+backcap]]</b><br />' + _('ms2_product_backcap_help')
+            },
+            jewerl_count: {
+                xtype: 'textfield',
+                description: '<b>[[+jewerl_count]]</b><br />' + _('ms2_product_jewerl_count_help')
             }
         };
     },
@@ -132,22 +152,22 @@ miniShop2.plugin.off50Prop = {
             body_diameter: {
                 width: 50,
                 sortable: false,
-                editor: {xtype: 'minishop2-combo-autocomplete', name: 'body_diameter'}
+                editor: {xtype: 'textfield', name: 'body_diameter'}
             },
             complect: {
                 width: 50,
                 sortable: false,
-                editor: {xtype: 'minishop2-combo-autocomplete', name: 'complect'}
+                editor: {xtype: 'textfield', name: 'complect'}
             },
             body_material: {
                 width: 50,
                 sortable: false,
-                editor: {xtype: 'minishop2-combo-autocomplete', name: 'body_material'}
+                editor: {xtype: 'textfield', name: 'body_material'}
             },
             clockwork: {
                 width: 50,
                 sortable: false,
-                editor: {xtype: 'minishop2-combo-autocomplete', name: 'clockwork'}
+                editor: {xtype: 'textfield', name: 'clockwork'}
             },
             sex: {
                 width: 50,
@@ -157,32 +177,32 @@ miniShop2.plugin.off50Prop = {
             strap_type: {
                 width: 50,
                 sortable: false,
-                editor: {xtype: 'minishop2-combo-autocomplete', name: 'strap_type'}
+                editor: {xtype: 'textfield', name: 'strap_type'}
             },
             strap_color: {
                 width: 50,
                 sortable: false,
-                editor: {xtype: 'minishop2-combo-autocomplete', name: 'strap_color'}
+                editor: {xtype: 'textfield', name: 'strap_color'}
             },
             dial_color: {
                 width: 50,
                 sortable: false,
-                editor: {xtype: 'minishop2-combo-autocomplete', name: 'dial_color'}
+                editor: {xtype: 'textfield', name: 'dial_color'}
             },
             stat: {
                 width: 50,
                 sortable: false,
-                editor: {xtype: 'minishop2-combo-autocomplete', name: 'stat'}
+                editor: {xtype: 'minishop2-combo-product-stat', name: 'stat'}
             },
             forma: {
                 width: 50,
                 sortable: false,
-                editor: {xtype: 'minishop2-combo-autocomplete', name: 'forma'}
+                editor: {xtype: 'textfield', name: 'forma'}
             },
             complication: {
                 width: 50,
                 sortable: false,
-                editor: {xtype: 'minishop2-combo-options', name: 'complication'}
+                editor: {xtype: 'textfield', name: 'complication'}
             },
             functions: {
                 width: 50,
@@ -192,32 +212,57 @@ miniShop2.plugin.off50Prop = {
             water_resist: {
                 width: 50,
                 sortable: false,
-                editor: {xtype: 'minishop2-combo-autocomplete', name: 'water_resist'}
+                editor: {xtype: 'textfield', name: 'water_resist'}
             },
             glass: {
                 width: 50,
                 sortable: false,
-                editor: {xtype: 'minishop2-combo-autocomplete', name: 'glass'}
+                editor: {xtype: 'textfield', name: 'glass'}
             },
             calibr: {
                 width: 50,
                 sortable: false,
-                editor: {xtype: 'minishop2-combo-autocomplete', name: 'calibr'}
+                editor: {xtype: 'textfield', name: 'calibr'}
             },
             power_reserve: {
                 width: 50,
                 sortable: false,
-                editor: {xtype: 'minishop2-combo-autocomplete', name: 'power_reserve'}
+                editor: {xtype: 'textfield', name: 'power_reserve'}
             },
             limited: {
                 width: 50,
                 sortable: false,
-                editor: {xtype: 'minishop2-combo-autocomplete', name: 'limited'}
+                editor: {xtype: 'textfield', name: 'limited'}
             },
             year: {
                 width: 50,
                 sortable: false,
-                editor: {xtype: 'minishop2-combo-autocomplete', name: 'year'}
+                editor: {xtype: 'textfield', name: 'year'}
+            },
+            bezel: {
+                width: 50,
+                sortable: false,
+                editor: {xtype: 'textfield', name: 'bezel'}
+            },
+            body_comment: {
+                width: 50,
+                sortable: false,
+                editor: {xtype: 'textfield', name: 'body_comment'}
+            },
+            strap_comment: {
+                width: 50,
+                sortable: false,
+                editor: {xtype: 'textfield', name: 'strap_comment'}
+            },
+            backcap: {
+                width: 50,
+                sortable: false,
+                editor: {xtype: 'textfield', name: 'strap_comment'}
+            },
+            jewerl_count: {
+                width: 50,
+                sortable: false,
+                editor: {xtype: 'textfield', name: 'jewerl_count'}
             }
         };
     }

@@ -19,7 +19,12 @@ return array(
         'calibr' => NULL,
         'power_reserve' => NULL,
         'limited' => NULL,
-        'year' => NULL
+        'year' => NULL,
+        'bezel' => NULL,
+        'body_comment' => NULL,
+        'strap_comment' => NULL,
+        'backcap' => NULL,
+        'jewerl_count' => NULL
     ),
     'fieldMeta' => array(
         'complect' => array(
@@ -95,14 +100,14 @@ return array(
         'complication' => array(
             'dbtype' => 'varchar'
             , 'precision' => '255'
-            , 'phptype' => 'JSON'
+            , 'phptype' => 'json'
             , 'null' => true
             , 'default' => NULL
         ),
         'functions' => array(
             'dbtype' => 'varchar'
             , 'precision' => '255'
-            , 'phptype' => 'JSON'
+            , 'phptype' => 'json'
             , 'null' => true
             , 'default' => NULL
         ),
@@ -144,6 +149,38 @@ return array(
         'year' => array(
             'dbtype' => 'varchar'
             , 'precision' => '255'
+            , 'phptype' => 'string'
+            , 'null' => true
+            , 'default' => NULL
+        ),
+        'bezel' => array(
+            'dbtype' => 'text'
+            , 'phptype' => 'string'
+            , 'null' => true
+            , 'default' => NULL
+        ),
+        'body_comment' => array(
+            'dbtype' => 'text'
+            , 'phptype' => 'string'
+            , 'null' => true
+            , 'default' => NULL
+        ),
+        'strap_comment' => array(
+            'dbtype' => 'text'
+            , 'phptype' => 'string'
+            , 'null' => true
+            , 'default' => NULL
+        ),
+        'backcap' => array(
+            'dbtype' => 'varchar'
+            , 'precision' => '255'
+            , 'phptype' => 'string'
+            , 'null' => true
+            , 'default' => NULL
+        ),
+        'jewerl_count' => array(
+              'dbtype' => 'varchar'
+            , 'precision' => 255
             , 'phptype' => 'string'
             , 'null' => true
             , 'default' => NULL
@@ -373,6 +410,71 @@ return array(
         ),
         'year' => array(
             'alias' => 'year'
+            , 'primary' => false
+            , 'unique' => false
+            , 'type' => 'BTREE'
+            , 'columns' => array(
+                'year' => array(
+                    'length' => ''
+                    , 'collation' => 'A'
+                    , 'null' => false
+                )
+            )
+        ),
+        'bezel' => array(
+            'alias' => 'bezel'
+            , 'primary' => false
+            , 'unique' => false
+            , 'type' => 'BTREE'
+            , 'columns' => array(
+                'year' => array(
+                    'length' => ''
+                    , 'collation' => 'A'
+                    , 'null' => false
+                )
+            )
+        ),
+        'body_comment' => array(
+            'alias' => 'body_comment'
+            , 'primary' => false
+            , 'unique' => false
+            , 'type' => 'BTREE'
+            , 'columns' => array(
+                'year' => array(
+                    'length' => ''
+                    , 'collation' => 'A'
+                    , 'null' => false
+                )
+            )
+        ),
+        'strap_comment' => array(
+            'alias' => 'strap_comment'
+            , 'primary' => false
+            , 'unique' => false
+            , 'type' => 'BTREE'
+            , 'columns' => array(
+                'year' => array(
+                    'length' => ''
+                    , 'collation' => 'A'
+                    , 'null' => false
+                )
+            )
+        ),
+        'backcap' => array(
+            'alias' => 'backcap'
+            , 'primary' => false
+            , 'unique' => false
+            , 'type' => 'BTREE'
+            , 'columns' => array(
+                'year' => array(
+                    'length' => ''
+                    , 'collation' => 'A'
+                    , 'null' => false
+                )
+            )
+        ),
+        'jewerl_count' => array(
+            'alias' => 'jewerl_count'
             , 'primary' => false
             , 'unique' => false
             , 'type' => 'BTREE'

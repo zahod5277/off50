@@ -64,11 +64,35 @@
             <div class="tab-content">
                 <div id="tab-1" class="tab-pane tab-pane_active">
                     <ul class="characteristics-list">
+                        {var $options = 
+                            'article,
+                             made_in,
+                             body_diameter,
+                             sex,
+                             body_material,
+                             clockwork,
+                             strap_color,
+                             forma,
+                             dial_color,
+                             strap_type,
+                             body_comment,
+                             strap_comment,
+                             jewerl_count,
+                             water_resist,
+                             backcap,
+                             power_reserve,
+                             limited'
+                        }
                         {$_modx->runSnippet('!msOptions',[
-                            'options' => 'article,made_in,body_diameter,sex,body_material,clockwork,strap_color,forma,dial_color,strap_type',
+                            'options' => $options,
                             'tpl' => '@FILE:chunks/shop/product/options.row.tpl'
                         ])}
                     </ul>
+                    <div class="clearfix"></div>
+                    <div class="col-xs-12">
+                        <h3>{'lw.add_content'|lexicon}</h3>
+                        {$_modx->resource.localizator_content}
+                    </div>
                 </div>
                 <div id="tab-2" class="tab-pane">
                     {$_modx->runSnippet('@FILE:snippets/localizatorField.php',[

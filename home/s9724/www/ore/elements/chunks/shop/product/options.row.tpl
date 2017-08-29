@@ -1,6 +1,6 @@
 {var $idx = 0}
 {foreach $options as $name => $values}
-    {if $idx==6}
+    {if $idx==9}
         </ul>
         <ul class="characteristics-list">
     {/if}

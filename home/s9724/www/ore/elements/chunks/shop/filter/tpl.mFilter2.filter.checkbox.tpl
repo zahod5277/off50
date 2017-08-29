@@ -1,7 +1,10 @@
 {if ('localizator_key' | option)!='ru'}
     {var $filter_title = $_modx->runSnippet('@FILE:snippets/translator.php',[
-                'input' => $title
-            ])}
+        'input' => $title
+    ])}
+    {if $filter_title == 'Switzerland'}
+        {var $filter_title = 'Swiss'}
+    {/if}    
     {else}
         {var $filter_title=$title}
 {/if}

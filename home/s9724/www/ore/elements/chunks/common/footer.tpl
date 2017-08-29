@@ -3,7 +3,7 @@
     <div class="container">
         <!-- left -->
         <div class="footer-info-contacts">
-            <a href="tel:89558965636" class="link-phone"><i class="icon icon-call-answer-secondary"></i> 8 (955) 896-56-36</a>
+            <a href="tel:{$_modx->config.sitePhone}" class="link-phone"><i class="icon icon-call-answer-secondary"></i> {$_modx->config.sitePhone}</a>
             <a href="#" data-popup="open" data-popup-id="#popup" class="more">{'lw.call-me'|lexicon}</a>
             <!-- value -->
             <div class="info-value">

@@ -3289,10 +3289,9 @@ body.home .header-bottom .container{
 /* LOGO */
 
 .logo{
-  display: inline-block;
-  float: left;
-  width: 35%;
-  padding-left: 24px;
+    display: inline-block;
+    float: left;
+    width: 35%;
 }
 
 .logo::after{
@@ -3304,12 +3303,15 @@ body.home .header-bottom .container{
 .logo img{
     display: inline-block;
     float: left;
-    width: 100%;
+    width: 60%;
 }
 
 .logo-text{
-  display: inline-block;
-  padding-top: 7px;
+    display: block;
+    float: right;
+    width: 100%;
+    padding-left: 0px;
+    padding-top: 7px;
 }
 
 .logo-text__title{
